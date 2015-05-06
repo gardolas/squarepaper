@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "the square paper front end ui project",
   "main": "Gruntfile.js",
+  "repository": "https://github.com/gardolas/squarepaper.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
