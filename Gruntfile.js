@@ -1,25 +1,25 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         autoprefixer: {
-            all: [{
+            multiple_files: {
                 expand: true,
                 flatten: true,
-                src: 'src/css/*.css',
-                dest: 'build/css/' 
-            }]
+                src: 'src/css/*.css', // -> src/css/file1.css, src/css/file2.css
+                dest: 'build/css/' // -> dest/css/file1.css, dest/css/file2.css
+            }
         },
 		concat: {
 			css: {
 				src: ['src/css/*.css'],
-				dest: 'src/css/squarepaper.css'
+				dest: 'build/css/squarepaper.css'
 			},
 			css_no_r: {
 				src: ['src/css/*.css', '!src/css/*.responsive.css'],
-				dest: 'src/css/squarepaper-non-responsive.css'
+				dest: 'build/css/squarepaper-non-responsive.css'
 			},
 			js : {
 				src: ['src/js/*.js'],
-				dest: 'src/js/squarepaper.js'
+				dest: 'build/js/squarepaper.js'
 			}
 		},
 		cssmin: {
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 		uglify: {
 			core: {
 				files: {
-					'build/js/squarepaper.min.js': ['src/js/squarepaper.js']
+					'build/js/squarepaper.min.js': ['build/js/squarepaper.js']
 				}
 			}
 		},
